@@ -1,2 +1,26 @@
-# EmployeePanel-vue
-This is the same EmployeePanel application that I earlier made using React Redux but now using Vue.js 
+# empman
+
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+
+### Run your tests
+```
+npm run test
+```
+
+### Lints and fixes files
+```
+npm run lint
+```
