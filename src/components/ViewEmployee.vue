@@ -10,6 +10,15 @@
             <li class="collection-item">Position: {{position}}</li>
             <button class="btn-floating black" @click="onMoveBack()">Go back</button>
             <button class="btn-floating red" @click="onDelete()">Delete</button>
+
+              <div class="fixed-action-btn">
+            <router-link :to="{name:'EditEmployee',params: {
+                employee_id : employee_id
+            }}" class="btn-floating btn-large blue">
+                <i class="fa fa-pencil"></i>
+            </router-link>
+        </div>
+        
         </ul>
     </div>
 </template>
@@ -30,10 +39,10 @@
             const snapshot = await db.collection('employees').where('employee_id','==',to.params.employee_id).get();
             snapshot.forEach(doc => {
                 next(vm => {
-                    vm.employee_id = doc.data().employee_id,
-                    vm.name = doc.data().name,
-                    vm.dept = doc.data().dept,
-                    vm.position = doc.data().position
+                    vm.employee_id = doc.data().employee_id;
+                    vm.name = doc.data().name;
+                    vm.dept = doc.data().dept;
+                    vm.position = doc.data().position;
                 });
             });
         },
